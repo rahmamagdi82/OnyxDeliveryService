@@ -4,7 +4,7 @@ import 'package:ony_x_delivery_service/core/utils/resources/style_manager.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/values_manager.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../gen/assets.gen.dart';
+import '../../../../../gen/assets.gen.dart';
 import 'form_widget.dart';
 import 'logo_language_widget.dart';
 

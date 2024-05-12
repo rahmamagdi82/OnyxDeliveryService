@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/color_manager.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/font_manager.dart';
 
-import '../../../../core/utils/resources/style_manager.dart';
-import '../../../../core/utils/resources/values_manager.dart';
+import '../../../../../core/utils/resources/style_manager.dart';
+import '../../../../../core/utils/resources/values_manager.dart';
+
 
 
 class CustomButton extends StatelessWidget{
-  const CustomButton({super.key, required this.text,  required this.onPressed, this.borderRadiusGeometry});
+  const CustomButton({super.key, required this.text,  required this.onPressed, this.borderRadiusGeometry, this.isLoading = false});
   final String text;
   final void Function()? onPressed;
   final BorderRadiusGeometry? borderRadiusGeometry;
+  final bool isLoading;
 
 
   @override
@@ -26,7 +28,9 @@ class CustomButton extends StatelessWidget{
               )
           ),
           onPressed: onPressed,
-          child: Text(
+          child: isLoading ?
+          CircularProgressIndicator(color: ColorManager.white,) :
+          Text(
             text,
             style: FontStyles.getMediumStyle(fontSize:FontSize.s16).copyWith(color: ColorManager.white),
           )),

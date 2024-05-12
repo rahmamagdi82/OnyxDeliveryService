@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../core/utils/resources/color_manager.dart';
-import '../../../../core/utils/resources/values_manager.dart';
-import '../../../../gen/assets.gen.dart';
+import '../../../../../core/utils/resources/color_manager.dart';
+import '../../../../../core/utils/resources/values_manager.dart';
+import '../../../../../gen/assets.gen.dart';
 
 class LogoLanguageWidget extends StatelessWidget {
   const LogoLanguageWidget({Key? key}) : super(key: key);

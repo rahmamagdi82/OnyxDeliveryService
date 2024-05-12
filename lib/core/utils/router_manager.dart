@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:ony_x_delivery_service/features/home/views/home_view.dart';
 
-import '../../features/login/views/login_view.dart';
+import '../../features/login/presentation/views/login_view.dart';
 import '../../features/splash/views/splash_view.dart';
 
 
