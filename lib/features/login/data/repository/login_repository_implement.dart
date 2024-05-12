@@ -5,13 +5,15 @@ import 'package:ony_x_delivery_service/features/login/data/data_source/remote_da
 import 'package:ony_x_delivery_service/features/login/domain/entites/user_entity.dart';
 import 'package:ony_x_delivery_service/features/login/domain/repository/login_repository.dart';
 
+import '../data_source/local_data_source.dart';
 import '../models/login_data_parameters.dart';
 import '../models/login_model.dart';
 
 class LoginRepositoryImp extends LoginRepository{
   final LoginRemoteDataSource loginRemoteDataSource;
+  final LoginLocalDataSource loginLocalDataSource;
 
-  LoginRepositoryImp({required this.loginRemoteDataSource});
+  LoginRepositoryImp({required this.loginRemoteDataSource,required this.loginLocalDataSource,});
   @override
   Future<Either<Failure, UserEntity>> login(LoginDataParameters dataModel) async {
     try{
@@ -21,6 +23,7 @@ class LoginRepositoryImp extends LoginRepository{
       }
       else{
         final UserEntity user = result.data;
+        loginLocalDataSource.setLoginData(user);
         return right(user);
       }
     }
@@ -31,4 +34,16 @@ class LoginRepositoryImp extends LoginRepository{
       return Left(ServerFailure(message: e.toString(), ));
     }
   }
+
+  @override
+  Future<Either<Failure, UserEntity>> checkLogin() async{
+    try{
+      final user = loginLocalDataSource.checkLogin();
+      return right(user);
+    }
+    catch(e){
+      return Left(ServerFailure(message: e.toString(), ));
+    }
+  }
+
 }
