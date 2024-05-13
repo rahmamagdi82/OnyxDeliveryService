@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/color_manager.dart';
-import 'package:ony_x_delivery_service/core/utils/resources/font_manager.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/style_manager.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/values_manager.dart';
 import 'package:ony_x_delivery_service/features/login/domain/entites/user_entity.dart';
-import 'package:ony_x_delivery_service/gen/assets.gen.dart';
-import 'package:svg_flutter/svg.dart';
 import 'custom_app_bar.dart';
 import 'new_bloc_builder_list.dart';
 import 'other_bloc_builder_list.dart';
