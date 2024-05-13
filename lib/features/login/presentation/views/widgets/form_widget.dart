@@ -42,7 +42,7 @@ class _FormWidgetState extends State<FormWidget> {
             const SizedBox(height: AppSize.s8,),
             CustomTextFormField(hintText: 'Password', keyboardType: TextInputType.visiblePassword, validator: (value ) {
               if(value!.isEmpty){
-                return 'User ID Should not be empty';
+                return 'Password Should not be empty';
               }
               else{
                 return null;

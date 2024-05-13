@@ -7,10 +7,10 @@ import '../../../../../core/utils/resources/values_manager.dart';
 
 
 class TitleWithValueWidget extends StatelessWidget {
-  const TitleWithValueWidget({Key? key, required this.title, required this.value, required this.color}) : super(key: key);
+  const TitleWithValueWidget({Key? key, required this.title, required this.value, this.color}) : super(key: key);
   final String title;
   final String value;
-  final Color color;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {

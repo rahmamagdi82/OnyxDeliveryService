@@ -42,11 +42,11 @@ class DeliveringOrderItem extends StatelessWidget {
                   Row(
                     children: [
                       const SizedBox(width: AppSize.s30,),
-                      Expanded(child: TitleWithValueWidget(title: 'Status', value: 'Delivering',color: ColorManager.primary,)),
+                      const Expanded(child: TitleWithValueWidget(title: 'Status', value: 'Delivering',)),
                       const DividerWidget(),
-                      Expanded(child: TitleWithValueWidget(title: 'Total price', value: '${calculateTotal()} LE',color: ColorManager.primary)),
+                      Expanded(child: TitleWithValueWidget(title: 'Total price', value: '${calculateTotal()} LE',)),
                       const DividerWidget(),
-                      Expanded(child: TitleWithValueWidget(title: 'Date', value: bill.billDate,color: ColorManager.primary)),
+                      Expanded(child: TitleWithValueWidget(title: 'Date', value: bill.billDate,)),
                     ],
                   ),
                 ],
