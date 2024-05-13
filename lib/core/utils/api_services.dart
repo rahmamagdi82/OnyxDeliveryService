@@ -12,4 +12,13 @@ class ApiServices{
     final result = await dio.post('${AppConstants.baseUrl}$endPoint',data: data);
     return result.data;
   }
+
+  Future<Map<String,dynamic>> get({required String endPoint,required Map<String,dynamic> data}) async {
+    final result = await dio.get('${AppConstants.baseUrl}$endPoint',data: data,options: Options(
+      headers: {
+        'Content-Type':'application/json-patch+json'
+      }
+    ));
+    return result.data;
+  }
 }

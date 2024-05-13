@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:ony_x_delivery_service/features/home/views/home_view.dart';
+import 'package:ony_x_delivery_service/features/login/domain/entites/user_entity.dart';
 
+import '../../features/home/presentation/views/home_view.dart';
 import '../../features/login/presentation/views/login_view.dart';
 import '../../features/splash/views/splash_view.dart';
 
@@ -23,7 +24,7 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: homeViewPath,
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) => HomeView(user: state.extra as UserEntity,),
       ),
     ],
   );

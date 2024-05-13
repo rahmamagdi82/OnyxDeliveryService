@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:ony_x_delivery_service/features/login/domain/entites/user_entity.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../core/utils/resources/color_manager.dart';
-import '../../../../core/utils/resources/font_manager.dart';
-import '../../../../core/utils/resources/style_manager.dart';
-import '../../../../core/utils/resources/values_manager.dart';
-import '../../../../gen/assets.gen.dart';
+import '../../../../../core/utils/resources/color_manager.dart';
+import '../../../../../core/utils/resources/font_manager.dart';
+import '../../../../../core/utils/resources/style_manager.dart';
+import '../../../../../core/utils/resources/values_manager.dart';
+import '../../../../../gen/assets.gen.dart';
+
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({Key? key}) : super(key: key);
-
+  const CustomAppBar({Key? key, required this.user}) : super(key: key);
+  final UserEntity user;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -30,8 +32,8 @@ class CustomAppBar extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Ahmed',style: FontStyles.getMediumStyle(fontSize: FontSize.s25).copyWith(color: ColorManager.white),),
-                  Text('Othman',style: FontStyles.getBoldStyle(fontSize: FontSize.s25).copyWith(color: ColorManager.white),),
+                  Text(user.userName.split(' ')[0],style: FontStyles.getMediumStyle(fontSize: FontSize.s25).copyWith(color: ColorManager.white),),
+                  Text(user.userName.split(' ')[1],style: FontStyles.getBoldStyle(fontSize: FontSize.s25).copyWith(color: ColorManager.white),),
                 ],
               ),
               Image.asset(Assets.images.deliveryman.path,),

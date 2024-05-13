@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/color_manager.dart';
 import 'package:ony_x_delivery_service/core/utils/resources/values_manager.dart';
+import 'package:ony_x_delivery_service/features/login/domain/entites/user_entity.dart';
 import 'package:ony_x_delivery_service/features/login/presentation/controller/check_login_cubit.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -16,7 +17,7 @@ class SplashBodyViewWidget extends StatelessWidget {
     return BlocListener<CheckLoginCubit,CheckLoginState>(
       listener: (BuildContext context, CheckLoginState state) {
         if(state is CheckLoginSuccess){
-          navigationTo(AppRouter.homeViewPath,context);
+          navigationTo(AppRouter.homeViewPath,context,user:state.user);
         }
         if(state is CheckLoginFailed){
           navigationTo(AppRouter.loginViewPath,context);
@@ -45,9 +46,9 @@ class SplashBodyViewWidget extends StatelessWidget {
     );
   }
 
-  void navigationTo(String path,BuildContext context){
+  void navigationTo(String path,BuildContext context, {UserEntity? user}){
     Future.delayed(const Duration(seconds: 3),(){
-      GoRouter.of(context).go(path);
+      GoRouter.of(context).go(path,extra: user);
     });
   }
 }

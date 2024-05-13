@@ -44,6 +44,7 @@ dependencies:
   fluttertoast: ^8.2.5
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  get_it: ^7.6.4
 
 dev_dependencies:
   flutter_test:
@@ -85,10 +86,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Poppins
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
+#  fonts:
+#    - family: Poppins
+#      fonts:
+#        - asset: assets/fonts/Poppins-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

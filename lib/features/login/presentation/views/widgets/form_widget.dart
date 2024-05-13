@@ -54,7 +54,7 @@ class _FormWidgetState extends State<FormWidget> {
             BlocConsumer<LoginCubit,LoginState>(
               listener: (BuildContext context, state) {
                 if(state is LoginSuccess){
-                  GoRouter.of(context).go(AppRouter.homeViewPath);
+                  GoRouter.of(context).go(AppRouter.homeViewPath,extra: state.user);
                 }
                 else if(state is LoginFailed){
                   Fluttertoast.showToast(msg: state.message,backgroundColor: ColorManager.red);

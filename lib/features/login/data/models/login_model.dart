@@ -31,7 +31,7 @@ class LoginModel {
 class Data extends UserEntity{
     Data({
         required this.deliveryName,
-    }) : super(userName: deliveryName);
+    }) : super(userName: deliveryName,);
 
     String deliveryName;
 

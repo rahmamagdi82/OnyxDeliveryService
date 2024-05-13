@@ -12,7 +12,7 @@ class LoginRemoteDataSourceImp extends LoginRemoteDataSource{
 
   LoginRemoteDataSourceImp({required this.apiServices});
 
-  final String loginEndPoint = 'OnyxDeliveryService/Service.svc/CheckDeliveryLogin';
+  final String loginEndPoint = 'CheckDeliveryLogin';
   @override
   Future<LoginModel> login(LoginDataParameters dataModel) async {
      final result = await apiServices.post(endPoint: loginEndPoint, data: {

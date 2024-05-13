@@ -31,6 +31,7 @@ class ServerFailure extends Failure{
   }
 
   factory ServerFailure.fromRequestError(int statusCode,dynamic response){
+    print(statusCode);
     if (statusCode == 400 || statusCode == 401 || statusCode == 403){
       return ServerFailure(message: response['Result']['ErrMsg']);
     }

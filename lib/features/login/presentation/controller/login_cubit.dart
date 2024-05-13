@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:ony_x_delivery_service/features/login/domain/entites/user_entity.dart';
 import 'package:ony_x_delivery_service/features/login/domain/use_cases/login_use_case.dart';
 
 import '../../data/models/login_data_parameters.dart';
@@ -16,8 +17,8 @@ class LoginCubit extends Cubit<LoginState> {
             (l) {
               emit(LoginFailed(message: l.message));
               },
-            (r) {
-              emit(LoginSuccess());
+            (user) {
+              emit(LoginSuccess(user: user));
             });
   }
 }
