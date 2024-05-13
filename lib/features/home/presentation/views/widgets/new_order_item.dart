@@ -15,7 +15,7 @@ class NewOrderItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(AppPadding.p16),
+      padding: const EdgeInsets.only(bottom:AppPadding.p16,left: AppPadding.p16,right: AppPadding.p16),
       child: Container(
         height: AppSize.s115,
         decoration: BoxDecoration(

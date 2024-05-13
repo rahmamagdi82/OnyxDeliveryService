@@ -18,7 +18,7 @@ class UserEntityAdapter extends TypeAdapter<UserEntity> {
     };
     return UserEntity(
       userName: fields[0] as String,
-      userNumber: fields[1] as String,
+      userNumber: fields[1] as String?,
     );
   }
 

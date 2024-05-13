@@ -22,6 +22,9 @@ class $AssetsImagesGen {
   AssetGenImage get deliveryman =>
       const AssetGenImage('assets/images/deliveryman.png');
 
+  /// File path: assets/images/empty_order.svg
+  String get emptyOrder => 'assets/images/empty_order.svg';
+
   /// File path: assets/images/logo.svg
   String get logo => 'assets/images/logo.svg';
 
@@ -39,6 +42,7 @@ class $AssetsImagesGen {
         circle,
         delivery,
         deliveryman,
+        emptyOrder,
         logo,
         manWithMotorcycle,
         path,

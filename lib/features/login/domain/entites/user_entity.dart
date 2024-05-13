@@ -4,9 +4,9 @@ part 'user_entity.g.dart';
 @HiveType(typeId: 0)
 class UserEntity{
   @HiveField(0)
-  final String userName;
+  String userName;
   @HiveField(1)
-  final String? userNumber;
+  String? userNumber;
 
 
   UserEntity({required this.userName, this.userNumber,});

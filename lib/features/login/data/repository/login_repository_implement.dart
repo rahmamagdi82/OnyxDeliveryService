@@ -22,8 +22,10 @@ class LoginRepositoryImp extends LoginRepository{
         return Left(ServerFailure(message: result.result.errMsg,));
       }
       else{
-        loginLocalDataSource.setLoginData(UserEntity(userName: result.data.userName, userNumber: dataModel.userId));
-        return right(UserEntity(userName: result.data.userName, userNumber: dataModel.userId));
+        UserEntity user = result.data;
+        user.userNumber = dataModel.userId;
+        loginLocalDataSource.setLoginData(user);
+        return right(user);
       }
     }
     catch(e){

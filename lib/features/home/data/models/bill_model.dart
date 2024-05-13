@@ -28,7 +28,7 @@ class BillModel extends BillEntity{
         required this.dlvryStatusFlg,
         required this.latitude,
         required this.rgnNm,
-    }) : super(billId: billSrl, billStatus: dlvryStatusFlg, billDate: billDate, taxAmount: taxAmt, deliveryAmount: dlvryAmt);
+    }) : super(billId: billNo, billStatus: dlvryStatusFlg, billDate: billDate, taxAmount: taxAmt, deliveryAmount: dlvryAmt);
 
     String dlvryAmt;
     String billTime;

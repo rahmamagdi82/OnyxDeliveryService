@@ -8,8 +8,8 @@ import '../../../../../core/utils/resources/style_manager.dart';
 import '../../../../../core/utils/resources/values_manager.dart';
 import 'divider_widget.dart';
 
-class DeliveredOrderItem extends StatelessWidget {
-  const DeliveredOrderItem({Key? key, required this.bill}) : super(key: key);
+class DeliveringOrderItem extends StatelessWidget {
+  const DeliveringOrderItem({Key? key, required this.bill}) : super(key: key);
   final BillEntity bill;
 
   @override
@@ -42,11 +42,11 @@ class DeliveredOrderItem extends StatelessWidget {
                   Row(
                     children: [
                       const SizedBox(width: AppSize.s30,),
-                      Expanded(child: TitleWithValueWidget(title: 'Status', value: 'Delivered',color: ColorManager.deliveredOrderColor)),
+                      Expanded(child: TitleWithValueWidget(title: 'Status', value: 'Delivering',color: ColorManager.primary,)),
                       const DividerWidget(),
-                      Expanded(child: TitleWithValueWidget(title: 'Total price', value: '${calculateTotal()} LE',color: ColorManager.deliveredOrderColor)),
+                      Expanded(child: TitleWithValueWidget(title: 'Total price', value: '${calculateTotal()} LE',color: ColorManager.primary)),
                       const DividerWidget(),
-                      Expanded(child: TitleWithValueWidget(title: 'Date', value: bill.billDate,color: ColorManager.deliveredOrderColor)),
+                      Expanded(child: TitleWithValueWidget(title: 'Date', value: bill.billDate,color: ColorManager.primary)),
                     ],
                   ),
                 ],
@@ -58,7 +58,7 @@ class DeliveredOrderItem extends StatelessWidget {
               height: AppSize.s115,
               width: AppSize.s44,
               decoration: BoxDecoration(
-                  color: ColorManager.deliveredOrderColor,
+                  color: ColorManager.primary,
                   borderRadius: const BorderRadius.only(topRight: Radius.circular(AppSize.s8),bottomRight: Radius.circular(AppSize.s8))
               ),
               child: Column(
@@ -81,4 +81,3 @@ class DeliveredOrderItem extends StatelessWidget {
     return '${total.round()}';
   }
 }
-
